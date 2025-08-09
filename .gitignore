@@ -1,1 +1,16 @@
 /.DS_Store
+
+/pip-cache/*
+!/pip-cache/.gitkeep
+
+/hf-cache/*
+!/hf-cache/.gitkeep
+
+/models/*
+!/models/.gitkeep
+
+/data/*
+!/data/.gitkeep
+
+/src/*
+!/src/.gitkeep
