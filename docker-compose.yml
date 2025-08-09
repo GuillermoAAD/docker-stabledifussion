@@ -1,0 +1,18 @@
+services:
+    stable-diffusion-webui:
+        build: .
+        platform: linux/amd64
+        container_name: stable-diffusion-webui
+        ports:
+            - '7860:7860'
+        volumes:
+            - ./src:/src
+            - ./models:/app/models                      # Modelos persistentes
+            - ./pip-cache:/home/appuser/.cache/pip       # Cache de pip
+            - ./hf-cache:/home/appuser/.cache/huggingface # Cache de HuggingFace
+        stdin_open: true
+        tty: true
+        deploy:
+            resources:
+                limits:
+                    memory: 6g           # Evita usar toda la RAM de la Mac
